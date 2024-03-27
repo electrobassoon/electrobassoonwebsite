@@ -1,15 +1,15 @@
 body {
-background-color: darkgray;
+background-color: lightgray;
 }
 
 h1 {
-color: darkblue;
+color: purple;
 text-align: center;
 font-size: 36px;
 }
 
 h2 {
-color:darkblue;
+color:purple;
 font-size: 24px;
 text-align: center;
 }
@@ -26,7 +26,7 @@ float: left;
 }
 li a {
 display:block;
-width: 150px;
+width: 220px;
 text-decoration: none;
 background-color: gray;
 color: black;
@@ -36,13 +36,25 @@ font-family: Georgia;
 font-size: 24px;
 }
 
+#bib a {
+display:inline;
+padding:0px;
+font-size:18px;
+background-color: lightgray;
+text-decoration: underline;
+}
+#bib a:hover{
+color: #440066;
+background-color:lightgray;
+}
+
 div.bib {
 text-align: center;
 }
 
-ul.biblist {
+#bib ul {
 list-style-type: none;
-background: darkgray;
+background: lightgray;
 text-align: left;
 font-size: 18px;
 word-spacing: 0.16em;
@@ -57,21 +69,21 @@ float:none;
 }
 
 li a.active {
-background-color: darkblue;
+background-color: purple;
 color: white;
 }
 
 li a:hover:not(.active){
-background-color: #000066;
+background-color: #440066;
 color:white;
 }
 
 img {
 border-style: solid;
 border-width: 6px;
-border-color: darkblue;
+border-color: purple;
 border-radius: 5px;
-margin: 0px 10px;
+margin: 0px 0px;
 }
 
 p {
@@ -88,7 +100,7 @@ word-spacing: 0.16em;
 a {
 font-family: Garamond, Georgia, sans-serif;
 font-size: 18px;
-color: darkblue;
+color: purple;
 }
 
 
@@ -100,7 +112,7 @@ align-self: flex-start;
 }
 
 .header{
-background-color: darkblue;
+background-color: purple;
 padding: 1px;
 border-color: black;
 }
@@ -115,7 +127,7 @@ color:lightgray;
 }
 
 .button {
-background-color:darkblue;
+background-color:purple;
 color:white;
 padding: 5px 15px;
 margins: auto;
@@ -168,11 +180,12 @@ align-items: center;
 }
 
 .footer {
-padding: 1px;
+padding: 0.5px;
 text-size: 12px;
 margin-top: 20px;
-background-color:darkblue;
+background-color:purple;
 color:lightgray;
 text-align: center;
+padding-bottom: 0px;
 }
 
