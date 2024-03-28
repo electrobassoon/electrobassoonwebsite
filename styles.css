@@ -14,6 +14,12 @@ font-size: 24px;
 text-align: center;
 }
 
+h3 {
+color: #55794D;
+font-size: 20px;
+text-align: center;
+}
+
 ul {
 list-style-type: none;
 margin: 0;
@@ -85,6 +91,7 @@ padding: 10px;
 border-color: #55794D;
 border-radius: 5px;
 margin: 0px 0px;
+max-width:600px;
 }
 
 p {
@@ -187,9 +194,16 @@ align-items: center;
   h2 {
       font-size: 36px;
   }
+  h3 {
+      font-size: 30px;
+  }
   li a {
       font-size: 30px;
   }
+  a {
+      font-size: 24px;
+}
+
 }
 
 .footer {
@@ -199,6 +213,6 @@ margin-top: 20px;
 background-color:#55794D;
 color:lightgray;
 text-align: center;
-padding-bottom: 0px;g
+padding-bottom: 0px;
 }
 

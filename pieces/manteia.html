@@ -20,10 +20,41 @@
 <h2>by Peter Van Zandt Lane</h2>
 <p><i>MANTEIA</i> is a collection of four pieces called <i>Aeromancer, Hydromancer, Pyromancer,</i> and <i>Chronomancer</i>. They were composed between 2008 and 2014, and were all revised in 2021. You can get the piece at the <a href="http://www.petervanzandtlane.com">composer's website</a>.
 </p>
-<p> Here is a setup diagram for <i>MANTEIA</i>.
-<br>
+<h2>Setup</h2>
+<p>There is no signal processing in these patches, as all the sounds are prerecorded. The patches are used to trigger each of the samples. An audio interface with two or four outputs is required. Two microphones or an electric bocal can optionally be used. The performance space will determine whether an appropriate balance can be obtained between the electronics and the performer without amplification for the bassoon. Since many of the samples have acoustic bassoon sounds in them, amplification via microphones may be best. The patches also support four audio channels for output. The first two are required, while three and four have possible uses for the performance. Channel three will output the sound of the microphone inputs so that they could be mixed with the first two channels or separated in a recording environment. Channel four is a mixdown of the electronics part, which would be useful as a monitor for the performer. 
+</p>
+<p>
+Two possible setups for the piece are shown here. The first shows a setup using microphones and channel four as a monitor for the performer. The patch in this scenario is controlled by someone else at the computer. The second diagram shows a setup without microphones and using a midi controller to operate the patch.
 <img src="../tikz/manteia.svg">
 </p>
+<h2>Electronics</h2>
+<p>
+For each patch, the performer needs to turn on the audio processing either from the microphone button in the top left corner or the power button on the bottom right of the screen. The patch is now ready to begin. The patches can progress through the cues in a few different ways. Perhaps the simplest way is sending a MIDI control value of 127 to the patch. This advances the patch but does not have any further controls. The patches also have controls for the Logidy UMI3 pedal, which has three switches. These switches map to controls for advancing the cue, stopping all audio, and resetting the patch back to the beginning. The MIDI messages to send for these buttons are ``Note On'' values of 64 (advance), 62 (stop audio), and 60 (reset the patch). Of course, any MIDI pedal that can send those ``Note On'' messages will also work. Additionally, the patch will advance if the space bar or right arrow key is pressed. These can also be triggered with a Bluetooth pedal. The ``S'' key and the ``R'' key are also mapped to stopping audio and resetting the patch, respectively. Finally, there is a also a section to jump to certain cues by typing in the number and hitting return.
+</p>
+<h3>Aeromancer</h3>
+<p>
+<a href="../images/aeromancerInt.png" target="_blank" ><img src="../images/aeromancerInt.png"></a>
+<a href="../images/aero.png" target="_blank" ><img src="../images/aero.png"></a>
+</p>
+<h3>Hyromancer</h3>
+<p>
+<a href="../images/hydromancerInt.png" target="_blank" ><img src="../images/hydromancerInt.png"></a>
+<a href="../images/hydro.png" target="_blank" ><img src="../images/hydro.png"></a>
+</p>
+<h3>Pyromancer</h3>
+<p>
+<a href="../images/pyromancerInt.png" target="_blank" ><img src="../images/pyromancerInt.png"></a>
+<a href="../images/pyro.png" target="_blank" ><img src="../images/pyro.png"></a>
+</p>
+<h3>Chronomancer</h3>
+<p>
+<a href="../images/chronomancerInt.png" target="_blank" ><img src="../images/chronomancerInt.png"></a>
+<a href="../images/chrono.png" target="_blank" ><img src="../images/chrono.png"></a>
+</p>
+<h2>Difficulty</h2>
+<p>From a technical standpoint, these pieces are probably better for graduate students or advanced undergraduate students. There are a lot of syncopated, advanced rhythms with wide chromatic leaps. Rhythmically there are also quintuplets, septuplets, variable rhythms, and tuples that span multiple beats. There are many extended techniques such as multiphonics, slap tonguing on the bocal, microtones, and overblowing notes. Of the four, <i>Chronomancer</i> is the most difficult technically, and <i>Pyromancer</i> is probably the easiest. The electronic aspect of these pieces is more straightforward. The music has clearly defined cue points to advance the patch. The greater difficulty is staying in sync with some of the extended clips.</p>
+<h2>Style</h2>
+<p>Stylistically these pieces have a lot of chromaticism, but they remain accessible. In the program notes, the composer writes that he used influences from the ``avant-garde electroacoustic tradition as well as EDM.'' Overall these are fun pieces for the performer and the audience.</p>
 
 <div class="footer" style="clear:both">
 <p>
