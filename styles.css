@@ -3,13 +3,13 @@ background-color: lightgray;
 }
 
 h1 {
-color: purple;
+color: #55794D;
 text-align: center;
 font-size: 36px;
 }
 
 h2 {
-color:purple;
+color:#55794D;
 font-size: 24px;
 text-align: center;
 }
@@ -44,7 +44,7 @@ background-color: lightgray;
 text-decoration: underline;
 }
 #bib a:hover{
-color: #440066;
+color: #445F3E;
 background-color:lightgray;
 }
 
@@ -69,19 +69,20 @@ float:none;
 }
 
 li a.active {
-background-color: purple;
+background-color: #55794D;
 color: white;
 }
 
 li a:hover:not(.active){
-background-color: #440066;
+background-color: #445F3E;
 color:white;
 }
 
 img {
 border-style: solid;
-border-width: 6px;
-border-color: purple;
+border-width: 3px;
+padding: 10px;
+border-color: #55794D;
 border-radius: 5px;
 margin: 0px 0px;
 }
@@ -100,7 +101,7 @@ word-spacing: 0.16em;
 a {
 font-family: Garamond, Georgia, sans-serif;
 font-size: 18px;
-color: purple;
+color: #55794D;
 }
 
 
@@ -112,7 +113,7 @@ align-self: flex-start;
 }
 
 .header{
-background-color: purple;
+background-color: #55794D;
 padding: 1px;
 border-color: black;
 }
@@ -127,7 +128,7 @@ color:lightgray;
 }
 
 .button {
-background-color:purple;
+background-color:#55794D;
 color:white;
 padding: 5px 15px;
 margins: auto;
@@ -183,9 +184,9 @@ align-items: center;
 padding: 0.5px;
 text-size: 12px;
 margin-top: 20px;
-background-color:purple;
+background-color:#55794D;
 color:lightgray;
 text-align: center;
-padding-bottom: 0px;
+padding-bottom: 0px;g
 }
 
