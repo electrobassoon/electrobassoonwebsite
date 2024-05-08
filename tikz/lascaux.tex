@@ -2,7 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows, positioning}
-% For all the diagram setups
+%For tikz node diagram setup
 \pagenumbering{gobble}
 
 \definecolor{mgreen}{HTML}{689562}
@@ -20,22 +20,25 @@
 
 \begin{document}
 \centering
-\begin{tikzpicture}[align=center, node distance=1cm]
+\begin{tikzpicture}[align=center,node distance = 1cm]
   \node (bsn) [source] {Bassoon};
-  \node (lj) [input, right = of bsn] {Little-Jake};
+  \node (lj) [input, right= of bsn] {Little-Jake};
   \node (preamp) [routing, right = of lj] {Preamp};
-  \node (dist) [processor, right = of preamp] {Distortion Pedal};
-  \node (amp) [source, right = of dist] {Amp};
+  \node (dist) [processor, right = of preamp] {Distortion};
+  \node (harm) [processor, right = of dist] {Pitch Shifter(s)};
+  \node (delay) [processor, right = of harm] {Delay};
+  \node (chorus) [processor, right = of delay] {Chorus};
+  \node (ensemble) [source, above = of dist] {Ensemble};
+  \node (amp1) [source, left = of ensemble] {Amp or Speaker};
+  \node (amp2) [source, right = of ensemble] {Amp or Speaker};
   \draw [cable] (bsn) -- (lj);
   \draw [cable] (lj) -- (preamp);
   \draw [cable] (preamp) -- (dist);
-  \draw [cable] (dist) -- (amp);
-  \node (bsn2) [source, below = of bsn] {Bassoon};
-  \node (mic) [input, right = of bsn2] {Microphone};
-  \node (dist2) [processor, right = of mic] {Distortion Pedal};
-  \node (amp2) [source, right = of dist2] {Amp};
-  \draw [cable] (bsn2) -- (mic);
-  \draw [cable] (mic) -- (dist2);
-  \draw [cable] (dist2) -- (amp2);
+  \draw [cable] (dist) -- (harm);
+  \draw [cable] (harm) -- (delay);
+  \draw [cable] (delay) -- (chorus);
+  \draw [cable] (chorus) -- (amp2);
+  \draw [cable] (chorus) to[out=165, in=-20] (amp1);
 \end{tikzpicture}
+
 \end{document}
