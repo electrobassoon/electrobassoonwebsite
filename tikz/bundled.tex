@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+  \begin{tikzpicture}[align=center, node distance=1cm]
+    \node (bsn) [source] {Bassoon};
+    \node (lj) [input, right = of bsn] {Little-Jake};
+    \node (preamp) [routing, right = of lj] {Preamp};
+    \node (wah) [processor, right = of preamp] {Wah Pedal};
+    \node (dist) [processor, right = of wah] {Distortion Pedal};
+    \node (chorus) [processor, right = of dist] {Chorus Pedal};
+    \node (phaser) [processor, right = of chorus] {Phaser Pedal};
+    \node (delay) [processor, right = of phaser] {Delay Pedal};
+    \node (amp) [source, right = of delay] {Amp};
+    \draw [cable] (bsn) -- (lj);
+    \draw [cable] (lj) -- (preamp);
+    \draw [cable] (preamp) -- (wah);
+    \draw [cable] (wah) -- (dist);
+    \draw [cable] (dist) -- (chorus);
+    \draw [cable] (chorus) -- (phaser);
+    \draw [cable] (phaser) -- (delay);
+    \draw [cable] (delay) -- (amp);
+  \end{tikzpicture}
+
+\end{document}
