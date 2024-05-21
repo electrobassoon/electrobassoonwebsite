@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+\begin{tikzpicture}[align=center, node distance=1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (mic1) [input, right= of bsn, yshift = 1cm] {Microphone};
+  \node (mic2) [input, right= of bsn, yshift = -1cm] {Microphone};
+  \draw [cable] (bsn) |- (mic1);
+  \draw [cable] (bsn) |- (mic2);
+  \node (interface) [routing, right = of mic1, yshift = -1cm] {Mixer};
+  \draw [cable] (mic1) -| (interface.north west);
+  \draw [cable] (mic2) -| (interface.south west);
+  \node (speaker1) [source, above = of interface] {Speaker};
+  \node (speaker2) [source, below = of interface] {Speaker};
+  \draw [cable] (interface) -- (speaker1);
+  \draw [cable] (interface) -- (speaker2);
+  \node (oct) [processor, right= of speaker1] {Octave Pedal};
+  \node (del1) [processor, below= of oct] {Delay Pedal};
+  \node (del2) [processor, below= of del1] {Delay Pedal};
+  \draw [cable] (interface.north east) -- (oct);
+  \draw [cable] (oct) -- (del1);
+  \draw [cable] (del1) -- (del2);
+  \draw [cable] (del2) -- (interface.south east);
+\end{tikzpicture}
+
+
+\end{document}

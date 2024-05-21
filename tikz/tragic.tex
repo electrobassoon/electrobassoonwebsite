@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+\begin{tikzpicture}[align=center,node distance = 1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (lj) [input, right= of bsn] {Little-Jake};
+  \node (preamp) [routing, right= of lj] {Preamp};
+  \node (dist) [processor, right= of preamp] {Distortion Pedal};
+  \node (flanger) [processor, right= of dist] {Flanger Pedal};
+  \node (delay) [processor, right= of flanger] {Delay Pedal};
+  \node (amp) [routing, right= of delay] {Amp XLR Output};
+  \draw node[anchor=south, below= of delay, yshift=-1cm, xshift=.5cm] {OR};
+  \node (di) [routing, below= of amp] {DI Box};
+  \node (mixer) [routing, right= of amp] {Mixer};
+  \node (mp3) [input, right= of mixer] {MP3 Player};
+  \node (pa) [source, below= of mixer] {Speaker};
+  \node (pa2) [source, above= of mixer] {Speaker};
+  \draw [cable] (bsn) -- (lj);
+  \draw [cable] (lj) -- (preamp);
+  \draw [cable] (preamp) -- (dist);
+  \draw [cable] (dist) -- (flanger);
+  \draw [cable] (flanger) -- (delay);
+  \draw [cable] (delay) -- (amp);
+  \draw [cable] (delay) |- (di);
+  \draw [cable] (amp) -- (mixer);
+  \draw [cable] (di) -- (mixer);
+  \draw [cable] (mp3) -- (mixer);
+  \draw [cable] (mixer) -- (pa);
+  \draw [cable] (mixer) -- (pa2);
+\end{tikzpicture}\\
+\vspace*{10ex}
+\begin{tikzpicture}[align=center,node distance = 1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (lj) [input, right= of bsn] {Little-Jake};
+  \node (preamp) [routing, right= of lj] {Preamp};
+  \node (dist) [processor, right= of preamp] {Distortion Pedal};
+  \node (flanger) [processor, right= of dist] {Flanger Pedal};
+  \node (delay) [processor, right= of flanger] {Delay Pedal};
+  \node (amp) [source, right= of delay] {Amp};
+  \node (pa2) [source, above= of amp] {Speaker};
+  \node (mixer) [routing, right= of pa2] {Mixer};
+  \node (mp3) [input, below= of mixer] {MP3 Player};
+  \node (orch) [source, above= of bsn] {Orchestra};
+  \node (pa) [source, right= of mixer] {Speaker};
+  \draw [cable] (bsn) -- (lj);
+  \draw [cable] (lj) -- (preamp);
+  \draw [cable] (preamp) -- (dist);
+  \draw [cable] (dist) -- (flanger);
+  \draw [cable] (flanger) -- (delay);
+  \draw [cable] (delay) -- (amp);
+  \draw [cable] (mp3) -- (mixer);
+  \draw [cable] (mixer) -- (pa);
+  \draw [cable] (mixer) -- (pa2);
+\end{tikzpicture}
+
+\end{document}
