@@ -27,6 +27,32 @@ padding: 0;
 overflow: hidden;
 background-color: gray;
 }
+
+#setup ul {
+list-style-type: circle;
+list-style-position: inside;
+background-color:lightgray;
+overflow:visible;
+font-size: 18px;
+font-family: sans-serif;
+max-width: 34em;
+margin-left: auto;
+margin-right: auto;
+line-height: 1.5em;
+word-spacing: 0.16em;
+}
+
+#setup li {
+float:none;
+text-align: left;
+display:list-item;
+}
+
+#setup li li {
+margin: 0px 15px;
+list-style-type: disc;
+}
+
 li {
 float: left;
 }
