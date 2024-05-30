@@ -253,6 +253,19 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #55794D;
 }
+
+
+.footer {
+padding: 0.5px;
+text-size: 12px;
+margin-top: 20px;
+background-color:#55794D;
+color:lightgray;
+text-align: center;
+padding-bottom: 0px;
+}
+
+
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
@@ -315,15 +328,5 @@ input[type=submit]:hover {
       font-size: 26px;
   }
 
-}
-
-.footer {
-padding: 0.5px;
-text-size: 12px;
-margin-top: 20px;
-background-color:#55794D;
-color:lightgray;
-text-align: center;
-padding-bottom: 0px;
 }
 
