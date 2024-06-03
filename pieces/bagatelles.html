@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Three Bagatelles for Bassoon and Electronics</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="header">
+  <a href="../index.html"><img src="../images/logo.png" alt="The Electric Bassoon" style="width:608px;height:300px"></a>
+</div>
+<nav>
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../pp.html">Performance Practice</a></li>
+  <li><a href="../bib.html">List of Works</a></li>
+  <li><a href="../contact.html">Contact</a></li>
+</ul>
+</nav>
+<h1>Three Bagatelles for Bassoon and Electronics</h1>
+<h2>by Erich Barganier</h2>
+<p>
+This piece was composed in 2017, and it can be obtained by contacting the composer at <a href="http://www.barganiermusic.com" target="_blank">his website</a>. The three bagatelles are called "The Virgin Mary Appears to the Drunks in the Alleyway," "Singing Melancholia," and "Deposition of Pilate."
+</p>
+<h2>Setup</h2>
+<h3>Necessary Equipment</h3>
+<div id="setup">
+<ul>
+<li>1 or More Microphones </li>
+<li>Audio Interface</li>
+<li>Computer</li>
+<li>2 Speakers</li>
+</ul>
+</div>
+<h3>Instructions</h3>
+<p>
+This piece requires one microphone to capture the bassoon sound. This should be connected to a computer via an audio interface, connected by a USB cable, with at least two outputs. A setup diagram is shown below.
+</p>
+<p>
+
+<a href="../tikz/bagatelles.svg" target="_blank"><img src="../tikz/bagatelles.svg"></a>
+</p>
+<p>
+This piece uses two SuperCollider patches. These are perhaps a little more intimidating than opening a Max patch that runs after a few buttons are clicked. Both patches should be opened in the SuperCollider IDE program. Then the performer should start the SuperCollider server, which can be done with a keyboard shortcut or in the Server menu. The numbers in the bottom right portion of the screen should all be green, signifying that SuperCollider is now ready to play sound.</p>
+<p>
+The first patch, called ``Three Bagatelles for Bassoon and Electronics.scd,'' contains forty lines of code. Lines 1, 3, 35, 37, 39, and 40 are the most important lines. The first line contains the text <span style="font-family:monospace">"~length = 16;"</span>. The patch operator should place the cursor on this line and evaluate it by pressing "Command + Return" on a Mac, or "Control + Return" on Windows or Linux. The Post Window in the bottom right should print the text <span style="font-family:monospace">"-> 16"</span>. Next the performer should evaluate the line <span style="font-family:monospace">"b = Buffer.alloc( s, s.sampleRate * ~length );"</span> after which the post window will print <span style="font-family:monospace">"-> Buffer(1, 705600.0, 1, 44100,0, nil)"</span> or something similar. Lines 5 through 35 need to be evaluated all at once, which can be done by pressing the same shortcut anywhere inside the outer parenthesis. The post window should return <span style="font-family:monospace">"-> a SynthDef"</span>. Then place the cursor somewhere on line 37, but it should not be evaluated yet. These steps need to be done before beginning the piece.</p>
+<p>
+In the rest at the end of measure 20, the patch operator should evaluate line 37, which reads <span style="font-family:monospace">"x = Synth( \textbackslash guitarGranulator, [ \textbackslash bufnum: b.bufnum ] );"</span>. This will start listening to the bassoon signal and process the sound for the next several measures. After the sound fades out in measure 30, the penultimate line that says <span style="font-family:monospace">"x.free;"</span> should be evaluated to stop the signal processing before continuing the piece. The performer should not close this patch at the end of the movement to simplify the performance of the last movement.</p>
+<p>
+The second movement requires some work ahead of time. The performer needs to create a WAV recording&mdash;easily done in most audio recording software&mdash;of the single measure printed at the top of the score. This file needs to be saved to the computer in a place that can be easily found at the performance. The second movement uses the file "Grain Sampler Input WAV.scd" and is a bit simpler than the first movement from the evaluation perspective; the performer needs to evaluate the entire file, which can be done from the Language menu and selecting Evaluate File. This will bring up the window shown in the screenshots section below. The performer should select the open new file button and find the recording of the musical cell created earlier. The file will be shown at the top of this window, which should now look like the second screenshot. There are various sliders that control different aspects of the granular synthesis, which can all be adjusted by dragging side to side or by growing or shrinking the length of the bar. 
+</p>
+<p>
+The top bar controls the position within the sound file that is used. For most of the piece, this will be the beginning of the file. Toward the end of the piece it will need to be adjusted to about halfway through the sound. The Trigger bar controls how often samples are triggered per second and should probably be increased from its starting position. The Transp bar controls the transposition of each sample and should probably be left at 0. The grainDur bar specifies how long the samples are and should probably be increased both in width and position. The Pan bar determines the stereo image and could have interesting effects depending on speaker placement. The grainAmp bar determines how loud the samples will be and can be adjusted to balance with the bassoon sound, but it is also interesting with a wider range of values. Finally, the Reverse bar determines how frequently the samples will be played in reverse instead of forward. After some experimentation in the practice room, the patch operator can write down the values that they think work best and set them before starting the sound. The big "START" button at the bottom will then start droning based on the settings used. Around measure 26, the top bar should move to begin sampling more of the moving parts of the recorded material, and at the very end, the bar should move back to the drone section. This sounds more difficult than it really is, and it can be learned quite quickly. 
+</p>
+<p>
+  The third movement uses the same patch as the first movement. If the patch has not been closed, the patch operator only has to evaluate line 37 that says <span style="font-family:monospace">"x = Synth( \textbackslash guitarGranulator, [ \textbackslash bufnum: b.bufnum ] );"</span> to start the sound synthesis again. The other lines that were evaluated persist until the file is closed. At the end of the piece, the last lines <span style="font-family:monospace">"x.free;"</span> and <span style="font-family:monospace">"b.free;"</span> will stop the sound synthesis again and remove the buffer.
+</p>
+<h2>Screenshots</h2>
+<p>
+<a href="../images/bagatelleInt3.png" target="_blank"><img src="../images/bagatelleInt3.png"></a>
+</p>
+<p>
+<a href="../images/bagatelleInt1.png" target="_blank"><img src="../images/bagatelleInt1.png"></a>
+</p>
+<p>
+<a href="../images/bagatelleInt2.png" target="_blank"><img src="../images/bagatelleInt2.png"></a>
+</p>
+<h2>Notation</h2>
+<p>
+<a href="../images/bagatelles.png" target="_blank"><img src="../images/bagatelles.png"></a>
+</p>
+<h2>Recordings</h2>
+<p>
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/428840460&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+</p>
+<h2>Difficulty</h2>
+<p>
+The technical aspects of this piece are within reach for most undergraduate students. There are some extended techniques, including key clicks, small pitch bends, and playing just the reed and bocal. The range is not extreme, and the tempo is moderate. The electronics are not terribly complex to execute but do require a little more than just opening a Max patch to get going. The second movement may be a little tricky to control while playing, so a separate electronics performer may be a better option. Overall, this piece could certainly be an option for introducing electronics to an undergraduate student, especially if someone else is running the SuperCollider patch.
+</p>
+<h2>Style</h2>
+<p>
+This piece leans more toward the avant-garde style but is not so experimental as to put off most audiences. There is a lot of chromaticism, but it would fit well alongside other post tonal works.
+</p>
+
+
+<div class="footer" style="clear:both">
+<p>
+ ©2024 by Benjamin Bradshaw <br />
+Logo ©2024 by Hannah Bradshaw<br />
+<img src="../images/logo2.png" alt="The Electric Bassoon" style="width:150px;height:72px"> </p>
+</div>
+</body>
+</html>
