@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+\begin{tikzpicture}[align=center,node distance = 1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (mic1) [input, right= of bsn, yshift = 1cm] {Microphone};
+  \node (mic2) [input, right= of bsn, yshift = -1cm] {Microphone};
+  \node (mic3) [input, above= of mic1, yshift= -0.65cm] {Optional Microphone};
+  \draw [cable] (bsn) |- (mic1);
+  \draw [cable] (bsn) |- (mic2);
+  \node (mixer) [routing, right = of mic1, yshift = -1cm] {Mixer};
+  \draw [cable] (mic1) -| (mixer.north west);
+  \draw [cable] (mic2) -| (mixer.south west);
+  \draw [cable] (mic3) to[out=-10, in = 120] (mixer);
+ \node (speaker1) [source, above = of mixer] {Speaker};
+  \node (speaker2) [source, below = of mixer] {Speaker};
+  \node (speaker3) [source, right= of speaker1] {Speaker};
+  \node (speaker4) [source, right= of speaker2] {Speaker};
+  \node (interface) [routing, right= of mixer] {Audio Interface};
+  \draw [cable] (mixer) to[out= 45,in=120](interface);
+  \draw [cable] (interface) to[out=235,in=-35] (mixer);
+  \node (computer) [processor, text width = 3cm, right = of speaker3, xshift=-0.5cm] {Computer};
+  \node (midi) [input, right= of speaker4, xshift=-0.5cm] {MIDI Pedal};
+  \draw [cable] (midi) to[out=90, in=-60] (interface);
+  \draw [usb] (interface) -- node[anchor = south, xshift= .5cm, yshift=-0.3cm] {USB} (computer);
+  \draw [cable] (mixer) -- (speaker1);
+  \draw [cable] (mixer) -- (speaker2);
+  \draw [cable] (mixer) to[out=55] (speaker3);
+  \draw [cable] (mixer) to[out=-70, in=135] (speaker4);
+\end{tikzpicture}
+~\\\vspace*{5ex}
+\begin{tikzpicture}[align=center,node distance = 1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (mic1) [input, right= of bsn] {Microphone};
+    \draw [cable] (bsn) -- (mic1);
+  \node (interface) [routing, right= of mic1] {Audio Interface};
+ \node (speaker1) [source, above = of interface] {Speaker};
+  \node (speaker2) [source, below = of interface] {Speaker};
+  \node (computer) [processor, text width = 3cm, right = of interface] {Computer};
+  \node (midi) [input, below= of computer] {MIDI Pedal};
+  \draw [cable] (mic1) -- (interface);
+  \draw [usb] (interface) -- node[anchor = south] {USB} (computer);
+  \draw [cable] (interface) -- (speaker1);
+  \draw [cable] (interface) -- (speaker2);
+  \draw [cable] (midi) -- (computer);
+\end{tikzpicture}
+
+
+\end{document}
