@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+\begin{tikzpicture}[align=center, node distance=1cm]
+%Computer Player Setup
+\node (bsn1) [source] {Bassoon};
+\node (mic1) [input, right = of bsn1] {Microphone};
+\node (int1) [routing, right = of mic1] {Audio Interface};
+\node (comp1) [processor, text width = 3cm, right = of int1] {Computer};
+\node (speaker1) [source, above = of comp1] {Speaker};
+\node (speaker2) [source, below = of comp1] {Speaker};
+\draw [cable] (bsn1) -- (mic1);
+\draw [cable] (mic1) -- (int1);
+\draw [usb] (int1) -- node[anchor = south]{USB} (comp1);
+\draw [cable] (int1) |- (speaker1);
+\draw [cable] (int1) |- (speaker2);
+%Independent Setup
+\node (bsn2) [source, below = of bsn1, yshift=-2cm] {Bassoon};
+\node (mic2) [input, below = of bsn2] {Microphone};
+\node (verb) [processor, right = of mic2] {Reverb};
+\node (int2) [routing, right = of verb] {Audio Interface};
+\node (midi) [input, above = of int2, yshift = -0.5cm] {MIDI Controllers};
+\node (comp2) [processor, text width = 3cm, right = of int2] {Computer};
+\node (speaker3) [source, above = of comp2] {Speaker};
+\node (speaker4) [source, below = of comp2] {Speaker};
+\draw [cable] (bsn2) -- (mic2);
+\draw [cable] (mic2) -- (verb);
+\draw [cable] (verb) -- (int2);
+\draw [cable] (midi) -- (int2);
+\draw [usb] (int2) -- node[anchor=south]{USB} (comp2);
+\draw [cable] (int2.north east) -- (speaker3);
+\draw [cable] (int2.south east) -- (speaker4);
+\end{tikzpicture}
+
+\end{document}
