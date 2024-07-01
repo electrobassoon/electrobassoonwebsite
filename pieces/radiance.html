@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radiance</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="header">
+  <a href="../index.html"><img src="../images/logo.png" alt="The Electric Bassoon" style="width:608px;height:300px"></a>
+</div>
+<nav>
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../pp.html">Performance Practice</a></li>
+  <li><a href="../bib.html">List of Works</a></li>
+  <li><a href="../contact.html">Contact</a></li>
+</ul>
+</nav>
+<h1>Radiance</h1>
+<h2>by John Paul Mayse</h2>
+<p>
+This piece was written in 2018 and was premiered by Dominic Panunto at the Live/Wire Opera Festival in Philadelphia. The piece is a five-movement programmatic work that draws inspiration from various parts of the Bible. This piece also uses lights that change colors based on the sound of the bassoon. The piece can be obtained by contacting the composer at <a href="http://jonpaulmayse.com" target="_blank">his website</a>.
+</p>
+<h2>Setup</h2>
+<h3>Necessary Equipment</h3>
+<div id="setup">
+<ul>
+<li>1 Microphone </li>
+<li>Audio Interface</li>
+<li>Computer</li>
+<li>DMX Controller</li>
+<li>4 Stage Lights</li>
+<li>4 Speakers</li>
+</ul>
+</div>
+<h3>Instructions</h3>
+<p>
+This piece calls for a lighting setup in addition to the audio setup. For the audio setup, the bassoon's sound travels through a microphone to an audio interface. The interface needs to have four outputs, as there are four speakers surrounding the bassoonist. There are no MIDI controllers for this piece, but the performance could be easier if a pedal was mapped to advance the movement counters. The stage lights are controlled by the DMX 512 protocol, which is programmed into the Max/MSP patch. The DMX is controlled by a USB DMX controller that connects to all of the lights via DMX cables. The four lights are placed next to each of the speakers and point toward the bassoonist.
+</p>
+<p>
+A possible setup is shown below.
+<a href="../tikz/radiance.svg" target="_blank"><img src="../tikz/radiance.svg"></a>
+</p>
+<p>
+The patch is shown in the screenshots section. The performer must turn the audio on by pressing the button in the bottom right corner. The colored panels in the bottom left corner show which movement is triggered and if the patch is listening to the sound or not. When the box on the far left is red, it means that the audio is being processed. The left panel with the number in it refers to the movement number. The right panel refers to which cue within the movement is active. This only applies to the fourth movement. The numbers are advanced by pressing the left and right square bracket keys ([ ]). The left bracket controls the movement number and the right bracket controls the cues. 
+</p>
+<h2>Screenshots</h2>
+<p>
+<a href="../images/radianceInt.png" target="_blank"><img src="../images/radianceInt.png"></a>
+</p>
+<h2>Notation</h2>
+<p>
+<a href="../images/radiance.png" target="_blank"><img src="../images/radiance.png"></a>
+</p>
+<h2>Recordings</h2>
+<p>
+<iframe width="600" height="355" src="https://www.youtube.com/embed/594e4Id3SKo?si=5R4wZ-RRabh4XCCl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+<h2>Difficulty</h2>
+<p>
+This piece is not very difficult from a technical standpoint, although it does ascend to a high E flat. Much of the piece is improvisatory within a collection of given notes, or long notes that blend into multiphonics. The electronics are not very difficult. Only the fourth movement has changes within the movement, and those are not very close together. The difficulty for the electronics part is the addition of a lighting system to the setup, although the piece could work without the lights. This piece is likely within reach of many undergraduate students. 
+</p>
+<h2>Style</h2>
+<p>
+This piece is somewhat experimental with the electronics setup, but not as much with the sound. Most of the sounds generated from the patch are reverberations of the harmonic series or colorful chords. There are some multiphonics in the bassoon part, but they are mostly overblown from low notes and have a rich sound. This piece would likely fit in most recital programs.
+</p>
+
+
+<div class="footer" style="clear:both">
+<p>
+ ©2024 by Benjamin Bradshaw <br />
+Logo ©2024 by Hannah Bradshaw<br />
+<img src="../images/logo2.png" alt="The Electric Bassoon" style="width:150px;height:72px"> </p>
+</div>
+</body>
+</html>

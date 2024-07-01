@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Music for Bassoon and Electronics</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="header">
+  <a href="../index.html"><img src="../images/logo.png" alt="The Electric Bassoon" style="width:608px;height:300px"></a>
+</div>
+<nav>
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../pp.html">Performance Practice</a></li>
+  <li><a href="../bib.html">List of Works</a></li>
+  <li><a href="../contact.html">Contact</a></li>
+</ul>
+</nav>
+<h1>Music for Bassoon and Electronics</h1>
+<h2>by Joshua Parmenter</h2>
+<p>
+This piece was written for Ryan Hare in 2002 and was premiered in 2003. According to the composer, this was the first piece written in SuperCollider 3. Currently the electronics do not run with current versions of SuperCollider. The piece can be obtained by contacting the composer at <a href="http://www.realizedsound.net" target="_blank">his website</a>.
+</p>
+<h2>Setup</h2>
+<h3>Necessary Equipment</h3>
+<div id="setup">
+<ul>
+<li>1 Microphone </li>
+<li>Sustain Pedal</li>
+<li>Audio Interface</li>
+<li>Computer</li>
+<li>2 or 8 Speakers</li>
+</ul>
+</div>
+<h3>Instructions</h3>
+<p>
+This piece requires a single microphone to capture the bassoon's sound, as well as an expression pedal or footswitch that is plugged into a second input. Instead of using MIDI to advance the patch, this piece uses the spike in the voltage signal from the pedal as a trigger. There is code that is commented out—meaning that the code is not run by the program, but it could easily be added to the program again by uncommenting it—that implies the piece was conceived to use eight speakers, but the patch also can use the normal stereo pair of speakers.
+</p>
+<p>
+ The setup for this piece is shown below.
+<a href="../tikz/mfb.svg" target="_blank"><img src="../tikz/mfb.svg"></a>
+</p>
+<p>
+Unfortunately, this piece seems not to be performable and would need an update to run in current versions of SuperCollider. The issue with the piece is related to updating the Open Sound Control messages. The piece requires the installation of an external package—called a Quark in SuperCollider—called JoshMisc. There are two files that need to be opened, "MFB.scd" and "MFBSD.scd." The "MFBSD.scd" file contains the synth definitions that need to be evaluated before trying to run the "MFB.scd" file. To evaluate the file, the patch operator should select Evaluate File from the Language menu. The post window in the bottom should print "SynthDefs loaded." Now the "MFB.scd" file can be evaluated. The closest the author could get to running the patch involved removing all of the lines of code that dealt with the "write" variable and then evaluating the file. This brings up the performance interface shown in the screenshot section. The patch seems to run, and pressing the foot pedal will advance the cues in the patch, but no sound is ever generated. OSC messages appear in the post window with every cue.
+</p>
+<h2>Screenshots</h2>
+<p>
+<a href="../images/mfbInt1.png" target="_blank"><img src="../images/mfbInt1.png"></a>
+</p>
+<p>
+<a href="../images/mfbInt2.png" target="_blank"><img src="../images/mfbInt2.png"></a>
+</p>
+<p>
+<a href="../images/mfbInt3.png" target="_blank"><img src="../images/mfbInt3.png"></a>
+</p>
+<h2>Notation</h2>
+<p>
+<a href="../images/mfb.png" target="_blank"><img src="../images/mfb.png"></a>
+</p>
+<h2>Recordings</h2>
+<p>
+A recording of the piece can be found on the composer's website <a href="https://www.realizedsound.net/josh/Bassoon.html" target="_blank"> here</a>.
+</p>
+<h2>Difficulty</h2>
+<p>
+From a technical standpoint, this piece would be difficult for most undergraduate students. There are frequent multiphonics, glissandos, and quarter tones. Much of the piece uses durational notation and is very free. Probably the biggest challenge would be learning all of the different fingerings required for the extended techniques. The range and speed are not excessive, so this piece could be done by an advanced undergraduate student that has some experience with extended techniques. The electronic part would not be too difficult once the patch was running, although the pedal presses sometimes occur frequently in certain passages.
+</p>
+<h2>Style</h2>
+<p>
+This piece features extended uses of multiphonics and leans more toward the avant-garde. However, it should still be accessible to many audiences because of the interesting play with delays and harmonics as opposed to atonality.
+</p>
+
+
+<div class="footer" style="clear:both">
+<p>
+ ©2024 by Benjamin Bradshaw <br />
+Logo ©2024 by Hannah Bradshaw<br />
+<img src="../images/logo2.png" alt="The Electric Bassoon" style="width:150px;height:72px"> </p>
+</div>
+</body>
+</html>
