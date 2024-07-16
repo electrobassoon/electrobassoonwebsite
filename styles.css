@@ -257,7 +257,7 @@ input[type=submit]:hover {
 
 .footer {
 padding: 0.5px;
-text-size: 12px;
+font-size: 12px;
 margin-top: 20px;
 background-color:#55794D;
 color:lightgray;
@@ -265,6 +265,10 @@ text-align: center;
 padding-bottom: 0px;
 }
 
+.footnotes {
+font-size: 14px;
+max-width: 44em;
+}
 
 @media (max-width: 800px) {
   .flex-container {

@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+\begin{tikzpicture}[align=center,node distance = 1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (lj) [input, right= of bsn] {Little-Jake};
+  \node (preamp) [routing, right= of lj] {Preamp};
+  \node (delay) [processor, right= of preamp] {Delay Pedal};
+  \node (sample) [processor, right= of delay] {Sample and Hold Pedal};
+  \node (loop) [processor, right= of sample] {Loop Pedal};
+  \node (pitch) [processor, right= of loop] {Pitch Shift Pedal};
+  \node (volume) [processor, right= of pitch] {Volume Pedal};
+  \node (amp) [source, right= of volume] {Amp};
+  \draw [cable] (bsn) -- (lj);
+  \draw [cable] (lj) -- (preamp);
+  \draw [cable] (preamp) -- (delay);
+  \draw [cable] (delay) -- (sample);
+  \draw [cable] (sample) -- (loop);
+  \draw [cable] (loop) -- (pitch);
+  \draw [cable] (pitch) -- (volume);
+  \draw [cable] (volume) -- (amp);
+\end{tikzpicture}\\
+
+
+\end{document}

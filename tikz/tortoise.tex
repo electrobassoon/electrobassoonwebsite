@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+
+\begin{tikzpicture}[align=center,node distance = 1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (interface) [routing, right = of bsn] {Audio Interface};
+  \node (computer) [processor, text width = 3cm, right = of interface] {Computer};
+  \draw [usb] (interface) -- node[anchor = south] {USB} (computer);
+  \node (speaker1) [source, above = of bsn] {Speaker};
+  \draw [cable] (interface) -- (speaker1);
+  \node (speaker2) [source, below = of bsn] {Speaker};
+  \draw [cable] (interface) -- (speaker2);
+  \node (speaker3) [source, above = of interface] {Speaker};
+  \draw [cable] (interface) -- (speaker3);
+  \node (speaker4) [source, below = of interface] {Speaker};
+  \draw [cable] (interface) -- (speaker4);
+  \node (speaker5) [source, above = of computer] {Speaker};
+  \draw [cable] (interface) -- (speaker5);
+  \node (speaker6) [source, below = of computer] {Speaker};
+  \draw [cable] (interface) -- (speaker6);
+  \node (speaker7) [source, right = of speaker5] {Speaker};
+  \draw [cable] (interface) -- (speaker7);
+  \node (speaker8) [source, right = of speaker6] {Speaker};
+  \draw [cable] (interface) -- (speaker8);
+\end{tikzpicture}
+
+\end{document}

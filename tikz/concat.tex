@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+%For tikz node diagram setup
+\pagenumbering{gobble}
+
+\definecolor{mgreen}{HTML}{689562}
+\definecolor{mpurp}{HTML}{85678f}
+\definecolor{mblue}{HTML}{3C406C}
+\definecolor{mgray}{HTML}{6F6F6F}
+\tikzset{trapezium stretches=true}
+\tikzstyle{source} = [rectangle, rounded corners, minimum width= 2cm, minimum height = 1cm, text = white, text centered, fill = mgray]
+\tikzstyle{input} = [trapezium, trapezium left angle=50, trapezium right angle = 130, minimum width = 1.5cm, minimum height=1cm, text centered, text=white, fill=mgreen]
+\tikzstyle{routing} = [diamond, minimum width=2cm, minimum height=1cm, aspect = 2, text width = 2cm, text centered, text=white,fill = mblue]
+\tikzstyle{processor} = [rectangle, minimum width = 2cm, minimum height = 1cm, text width = 3cm, text = white, fill = mpurp]
+\tikzstyle{cable} = [thick, ->, >=latex]
+\tikzstyle{usb} = [thick, <->, >=latex]
+
+
+\begin{document}
+\centering
+\begin{tikzpicture}[align=center, node distance=1cm]
+  \node (bsn) [source] {Bassoon};
+  \node (midi) [input, right = of bsn] {MIDI Controller};
+  \node (mic1) [input, above = of midi] {Microphone};
+  \node (mic2) [input, below = of midi] {Microphone};
+  \node (int) [routing, right = of midi] {Audio Interface};
+  \node (comp) [processor, right = of int] {Computer};
+  \node (speaker1) [source, above = of comp] {Speaker};
+  \node (speaker2) [source, below = of comp] {Speaker};
+  \node (speaker3) [source, left = of speaker1] {Speaker};
+  \node (speaker4) [source, left = of speaker2] {Speaker};
+  \node (speaker5) [source, left = of speaker3] {Speaker};
+  \node (speaker6) [source, left = of speaker4] {Speaker};
+  \draw [cable] (bsn) |- (mic1);
+  \draw [cable] (bsn) |- (mic2);
+  \draw [cable] (mic1)-- (int.north west);
+  \draw [cable] (mic2)-- (int.south west);
+  \draw [usb] (int) -- node[anchor = south]{USB} (comp);
+  \draw [cable] (int) -- (speaker1);
+  \draw [cable] (int) -- (speaker2);
+  \draw [cable] (int) -- (speaker3);
+  \draw [cable] (int) -- (speaker4);
+  \draw [cable] (int) -- (speaker5);
+  \draw [cable] (int) -- (speaker6);
+  \draw [cable] (midi) -- (int);
+\end{tikzpicture}
+
+
+\end{document}
