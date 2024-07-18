@@ -331,7 +331,7 @@ border:1px solid;
       word-spacing: 0.26em;
 }
   #bib a {
-      font-size: 26px;
+      font-size: 24px;
       line-height: 2em;
       word-spacing: 0.26em;
       }
@@ -346,6 +346,7 @@ border:1px solid;
  .biblist li {
      display: list-item;
      font-size: 24px;
+     line-height: 2em;
      float:none;
  }
  #bib ul {
