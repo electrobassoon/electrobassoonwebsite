@@ -80,6 +80,7 @@ padding:0px;
 font-size:18px;
 background-color: lightgray;
 text-decoration: underline;
+font-family: sans-serif;
 }
 #bib a:hover{
 color: #445F3E;
@@ -105,6 +106,7 @@ overflow: visible;
 display: list-item;
 font-size: 18px;
 text-align:left;
+line-height: 1.5em;
 margin:auto;
 }
 
@@ -210,10 +212,12 @@ align-items: center;
 }
 label {
 font-size:18px;
+font-family: sans-serif;
 }
 form {
 max-width: 34em;
 margin: auto;
+font-family: sans-serif;
 }
 
 input[type=text], select {
@@ -225,6 +229,7 @@ border-radius: 4px;
 border: 1px solid #ccc;
 box-sizing:border-box;
 font-size:18px;
+font-family: sans-serif;
 }
 input[type=email], select {
 width: 100%;
@@ -235,6 +240,7 @@ border-radius: 4px;
 border: 1px solid #ccc;
 box-sizing:border-box;
 font-size:18px;
+font-family: sans-serif;
 }
 textarea {
 width: 100%;
@@ -245,6 +251,7 @@ border-radius: 4px;
 border: 1px solid #ccc;
 box-sizing:border-box;
 font-size:18px;
+font-family: sans-serif;
 }
 input[type=submit] {
   background-color: #445F3E;
@@ -255,6 +262,7 @@ input[type=submit] {
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+font-family: sans-serif;
   
 }
 
@@ -284,6 +292,7 @@ text-decoration: none;
 
 table {
 margin:auto;
+font-family: sans-serif;
 font-size:18px;
 border:1px solid;
 border-collapse: collapse;
