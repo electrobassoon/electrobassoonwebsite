@@ -270,6 +270,25 @@ font-size: 14px;
 max-width: 44em;
 }
 
+.footnotes a{
+text-decoration: none;
+}
+
+table {
+margin:auto;
+font-size:18px;
+border:1px solid;
+border-collapse: collapse;
+}
+th {
+background-color:#55794D;
+padding: 10px;
+}
+td {
+padding: 5px;
+border:1px solid;
+}
+
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
