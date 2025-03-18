@@ -32,6 +32,7 @@ display:inline-block;
 }
 
 #setup ul {
+display: block;
 list-style-type: circle;
 list-style-position: inside;
 background-color:lightgray;
